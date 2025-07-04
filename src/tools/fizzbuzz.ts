@@ -1,6 +1,6 @@
 import z from "zod";
-import { fizzbuzz } from "../../lib/fizzbuzz.ts";
-import type { ToolFn } from "../../types.ts";
+import { fizzbuzz } from "../lib/fizzbuzz.ts";
+import type { ToolFn } from "../types.ts";
 
 export const fizzbuzzToolDefinition = {
   name: "fizzbuzz",
