@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { fizzbuzz } from "./fizzbuzz";
+import { fizzbuzz } from ".";
 
 test("fizzbuzz", () => {
   expect(fizzbuzz(1)).toBe("1");
