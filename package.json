@@ -2,7 +2,13 @@
   "name": "agentic-fizzbuzz",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "check": "bunx biome check --write",
+    "format": "bunx biome format --write",
+    "lint": "bunx biome lint --write"
+  },
   "devDependencies": {
+    "@biomejs/biome": "2.0.6",
     "@types/bun": "latest"
   },
   "peerDependencies": {
