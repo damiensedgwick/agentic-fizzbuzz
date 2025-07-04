@@ -1,6 +1,5 @@
 import { generateText } from "ai";
 import { openai } from "@/lib/openai";
-import { fizzbuzz } from "./lib/fizzbuzz";
 
 const agentNames = [
   "input-validator",
@@ -44,6 +43,7 @@ export const inputValidatorAgent = async (input: string) => {
         - The number should be between 1 and 100.
         - If the number is not a positive integer or is not between 1 and 100, you should return false.
         - If the number is a positive integer and is between 1 and 100, you should return true.
+        - If validation fails, can you give me a reason why?
         `,
   });
 
@@ -61,27 +61,23 @@ export const fizzbuzzAgent = async (input: string) => {
         - The result should be a string.
         `,
   });
-  console.log("🚀 ~ fizzbuzzAgent ~ text:", text);
 
   return text;
 };
 
-export const resultValidatorAgent = async (input: string) => {
+export const resultValidatorAgent = async (result?: string, input?: string) => {
   const { text } = await generateText({
     model: openai("o3-mini"),
     prompt: `
         You are a helpful assistant that can help with FizzBuzz result validation.
 
         - The user has provided a number and you need to validate the generated result.
-        - The result is ${input}.
+        - The result is ${result} and the user input is ${input}.
         - The result should be a string.
-        - You should use fizzbuzz.ts to validate the result and return the result.
         - The result can be Fizz, Buzz, FizzBuzz or the number itself.
+        - You should return true if the result is valid, otherwise return false.
         `,
   });
-  console.log("🚀 ~ resultValidatorAgent ~ text:", text);
 
-  const result = fizzbuzz(Number(input));
-
-  return result === text;
+  return Boolean(text);
 };
