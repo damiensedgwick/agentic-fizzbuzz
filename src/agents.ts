@@ -59,6 +59,8 @@ export const fizzbuzzAgent = async (input: string) => {
         - The user has provided a number and you need to fizzbuzz it.
         - The number is ${input}.
         - The result should be a string.
+        - You can only return Fizz, Buzz, FizzBuzz or the number itself.
+        - You can not return anything else.
         `,
   });
 
