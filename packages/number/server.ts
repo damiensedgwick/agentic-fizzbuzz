@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 8004;
+const port = 8005;
 
 app.get("/health", (req, res) => {
   res.json({
@@ -10,5 +10,5 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}...`);
+  console.log(`Number service listening on port ${port}...`);
 });

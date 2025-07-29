@@ -1,0 +1,102 @@
+services:
+  fizz:
+    build:
+      context: ./packages/fizz
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fizzbuzz-network
+
+  buzz:
+    build:
+      context: ./packages/buzz
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fizzbuzz-network
+
+  fizzbuzz:
+    build:
+      context: ./packages/fizzbuzz
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fizzbuzz-network
+
+  coordinator:
+    build:
+      context: ./packages/coordinator
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8004"
+    environment:
+      - NODE_ENV=production
+      - FIZZ_SERVICE_URL=http://fizz:8001
+      - BUZZ_SERVICE_URL=http://buzz:8002
+      - FIZZBUZZ_SERVICE_URL=http://fizzbuzz:8003
+      - NUMBER_SERVICE_URL=http://number:8005
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      fizz:
+        condition: service_healthy
+      buzz:
+        condition: service_healthy
+      fizzbuzz:
+        condition: service_healthy
+      number:
+        condition: service_healthy
+    networks:
+      - fizzbuzz-network
+
+  number:
+    build:
+      context: ./packages/number
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8005"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fizzbuzz-network
+
+networks:
+  fizzbuzz-network:
+    driver: bridge 

@@ -1,9 +1,18 @@
 {
   "name": "fizz",
+  "version": "1.0.0",
+  "description": "Fizz microservice for FizzBuzz",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "bun run --watch server.ts",
+    "start": "bun run server.ts",
+    "build": "bun build server.ts --outdir dist"
+  },
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "bun-types": "latest"
   }
 }
