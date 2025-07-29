@@ -1,4 +1,4 @@
-# Agentic FizzBuzz
+# Agentic FizzBuzz (WIP)
 
 A distributed, agent-based FizzBuzz implementation where each microservice operates as an autonomous agent with specialised capabilities.
 
