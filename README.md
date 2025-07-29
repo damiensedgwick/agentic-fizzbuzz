@@ -1,6 +1,6 @@
 # Agentic FizzBuzz
 
-A distributed, agent-based FizzBuzz implementation where each microservice operates as an autonomous agent with specialized capabilities.
+A distributed, agent-based FizzBuzz implementation where each microservice operates as an autonomous agent with specialised capabilities.
 
 ## Architecture
 
