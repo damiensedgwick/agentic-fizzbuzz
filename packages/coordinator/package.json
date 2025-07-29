@@ -1,0 +1,9 @@
+{
+  "name": "coordinator",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
