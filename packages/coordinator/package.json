@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "express": "^5.1.0",
+    "lowdb": "^7.0.1",
     "openai": "^4.85.1",
+    "uuid": "^11.0.5",
     "zod": "^3.24.2"
   },
   "devDependencies": {

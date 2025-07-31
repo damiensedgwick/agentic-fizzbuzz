@@ -9,5 +9,8 @@ export const taskToolDefinition = {
 
 type Args = z.infer<typeof taskToolDefinition.parameters>;
 
-export const fizzbuzzTaskTool: ToolFn<Args, boolean> = async ({ message }) =>
-  message.task === "fizzbuzz";
+export const fizzbuzzTaskTool: ToolFn<Args, boolean> = async ({ message }) => {
+  const { task } = JSON.parse(message);
+
+  return task === "fizzbuzz";
+};

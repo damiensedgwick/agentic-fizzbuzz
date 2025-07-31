@@ -6,6 +6,6 @@ export type AIMessage =
   | { role: "tool"; content: string; tool_call_id: string };
 
 export type ToolFn<A = any, T = any> = (input: {
-  message: { task: string; number: number };
+  message: string;
   toolArgs: A;
 }) => Promise<T>;

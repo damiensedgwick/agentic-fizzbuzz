@@ -1,4 +1,6 @@
-import express from "express";
+import express, { response } from "express";
+import { runAgent } from "./lib/agent";
+import { tools } from "./lib/tools";
 
 const app = express();
 const port = 8004;
@@ -11,8 +13,24 @@ app.get("/health", (req, res) => {
   });
 });
 
-app.post("/process", (req, res) => {
-  res.json({ received: req.body });
+app.post("/process", async (req, res) => {
+  const { task, number } = req.body;
+
+  if (!task || !number) {
+    return res.status(400).json({ error: "Invalid request body" });
+  }
+
+  try {
+    const response = await runAgent({
+      message: { task, number },
+      tools,
+    });
+
+    res.json({ received: response });
+  } catch (error) {
+    console.error("🚀 ~ error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 app.listen(port, () => {

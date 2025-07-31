@@ -1,6 +1,6 @@
 import OpenAI from "openai";
-import { tools } from ".";
-import { fizzbuzzTaskTool } from "./task";
+import { tools } from "./tools";
+import { fizzbuzzTaskTool } from "./tools/task";
 
 export async function runTool(
   toolCall: OpenAI.Chat.Completions.ChatCompletionMessageToolCall,
