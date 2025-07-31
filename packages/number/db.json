@@ -38,6 +38,45 @@
       "annotations": [],
       "id": "e79ffcd6-ca0f-4a32-885e-b05e948863a2",
       "createdAt": "2025-07-31T15:12:44.058Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"number\":1}",
+      "id": "3806bbad-8e66-44ee-9361-dbbf6caa9d30",
+      "createdAt": "2025-07-31T15:28:35.699Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_VG1v4AG0QRHqChWH83Xrn9r0",
+          "type": "function",
+          "function": {
+            "name": "number",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "0995a738-2503-4c09-8edd-a0bd694388eb",
+      "createdAt": "2025-07-31T15:28:37.837Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"1\"}",
+      "tool_call_id": "call_VG1v4AG0QRHqChWH83Xrn9r0",
+      "id": "5801f46b-c912-4722-987a-a09f69812299",
+      "createdAt": "2025-07-31T15:28:37.839Z"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"result\":\"1\"}",
+      "refusal": null,
+      "annotations": [],
+      "id": "0f5fb093-05aa-4ba5-8d2c-6f795cfff3a9",
+      "createdAt": "2025-07-31T15:28:38.490Z"
     }
   ]
 }

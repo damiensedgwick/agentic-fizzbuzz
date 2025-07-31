@@ -22,7 +22,7 @@ app.post("/reset", async (req, res) => {
       message: "Database reset successfully",
     });
   } catch (error) {
-    console.error("🚀 ~ reset error:", error);
+    console.error("🚨 [COORDINATOR] Database reset error:", error);
     res.status(500).json({ error: "Failed to reset database" });
   }
 });
@@ -34,25 +34,26 @@ app.post("/process", async (req, res) => {
     return res.status(400).json({ error: "Invalid request body" });
   }
 
+  console.log(`🎯 [COORDINATOR] Received fizzbuzz task for number ${number}`);
+
   try {
     const response = await runAgent({
       message: { task, number },
       tools,
     });
 
-    console.info(`
-      ${response[response.length - 1]?.content}
-    `);
+    const result = response[response.length - 1]?.content;
+    console.log(`✅ [COORDINATOR] Task completed. Result: ${result}`);
 
     res.json({
-      message: response[response.length - 1]?.content,
+      message: result,
     });
   } catch (error) {
-    console.error("🚀 ~ error:", error);
+    console.error("🚨 [COORDINATOR] Processing error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
 
 app.listen(port, () => {
-  console.log(`Coordinator service listening on port ${port}...`);
+  console.log(`🚀 [COORDINATOR] Service listening on port ${port}...`);
 });

@@ -9,6 +9,9 @@ export async function runAgent({
   message: { task: string; number: number };
   tools: any[];
 }) {
+  console.log(
+    `🧠 [COORDINATOR] Starting agent processing for number ${message.number}`
+  );
   await addMessages([{ role: "user", content: JSON.stringify(message) }]);
 
   while (true) {
@@ -20,6 +23,7 @@ export async function runAgent({
 
     if (response.content) {
       await addMessages([response]);
+      console.log(`✨ [COORDINATOR] Agent processing completed`);
       return getMessages();
     }
 
@@ -31,6 +35,8 @@ export async function runAgent({
       const toolName = toolCall.function.name;
       const toolArgs = JSON.parse(toolCall.function.arguments);
 
+      console.log(`🔧 [COORDINATOR] Executing tool: ${toolName}`);
+
       if (toolImplementations[toolName]) {
         const result = await toolImplementations[toolName]({
           message: JSON.stringify(message),
@@ -39,7 +45,7 @@ export async function runAgent({
 
         await saveToolResponse(toolCall.id, JSON.stringify({ result }));
       } else {
-        console.error(`Unknown tool: ${toolName}`);
+        console.error(`❌ [COORDINATOR] Unknown tool: ${toolName}`);
       }
     }
   }

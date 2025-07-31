@@ -21,7 +21,9 @@ export async function sendToAgent(
   }
 
   try {
-    console.log(`Sending request to ${agentName} agent at ${serviceUrl}/check`);
+    console.log(
+      `📤 [COORDINATOR] Sending request to ${agentName} agent at ${serviceUrl}/check`
+    );
 
     const response = await fetch(`${serviceUrl}/check`, {
       method: "POST",
@@ -51,7 +53,10 @@ export async function sendToAgent(
 
     return data;
   } catch (error) {
-    console.error(`Error communicating with ${agentName} agent:`, error);
+    console.error(
+      `🚨 [COORDINATOR] Error communicating with ${agentName} agent:`,
+      error
+    );
     throw error;
   }
 }
@@ -76,7 +81,10 @@ export async function checkAgentHealth(agentName: string): Promise<boolean> {
     });
     return response.ok;
   } catch (error) {
-    console.error(`Health check failed for ${agentName} agent:`, error);
+    console.error(
+      `🚨 [COORDINATOR] Health check failed for ${agentName} agent:`,
+      error
+    );
     return false;
   }
 }

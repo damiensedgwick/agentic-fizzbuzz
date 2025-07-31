@@ -27,16 +27,25 @@ export const nextTool: ToolFn<Args, string> = async ({ message }) => {
     agentName = "number";
   }
 
-  console.log(`Routing number ${number} to ${agentName} agent`);
+  console.log(
+    `🔄 [COORDINATOR] Routing number ${number} to ${agentName} agent`
+  );
 
   try {
     // Send the request to the determined agent
     const response = await sendToAgent(agentName, number);
 
+    console.log(
+      `📨 [COORDINATOR] Received response from ${agentName} agent: ${response.result}`
+    );
+
     // Return the result from the agent
     return response.result || number.toString();
   } catch (error) {
-    console.error(`Error sending to ${agentName} agent:`, error);
+    console.error(
+      `🚨 [COORDINATOR] Error sending to ${agentName} agent:`,
+      error
+    );
     throw new Error(`Failed to communicate with ${agentName} agent: ${error}`);
   }
 };

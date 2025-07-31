@@ -22,7 +22,7 @@ app.post("/reset", async (req, res) => {
       message: "Database reset successfully",
     });
   } catch (error) {
-    console.error("🚀 ~ reset error:", error);
+    console.error("🚨 [FIZZ] Database reset error:", error);
     res.status(500).json({ error: "Failed to reset database" });
   }
 });
@@ -34,9 +34,7 @@ app.post("/check", async (req, res) => {
     return res.status(400).json({ error: "Number is required" });
   }
 
-  console.log(
-    `🔵 Fizz agent received message from coordinator: processing number ${number}`
-  );
+  console.log(`🎯 [FIZZ] Received request to check number ${number}`);
 
   try {
     const response = await runAgent({
@@ -47,17 +45,17 @@ app.post("/check", async (req, res) => {
     const lastMessage = response[response.length - 1];
     const result = lastMessage?.content;
 
-    console.log(`✅ Fizz agent: ${number} processed, result: ${result}`);
+    console.log(`✅ [FIZZ] Validation completed. Result: ${result}`);
 
     res.json({
       result: result === "Fizz" ? "Fizz" : null,
     });
   } catch (error) {
-    console.error("🚀 ~ error:", error);
+    console.error("🚨 [FIZZ] Processing error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
 
 app.listen(port, () => {
-  console.log(`Fizz service listening on port ${port}...`);
+  console.log(`🚀 [FIZZ] Service listening on port ${port}...`);
 });

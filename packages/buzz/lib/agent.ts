@@ -9,6 +9,7 @@ export async function runAgent({
   message: { number: number };
   tools: any[];
 }) {
+  console.log(`🧠 [BUZZ] Starting validation for number ${message.number}`);
   await addMessages([{ role: "user", content: JSON.stringify(message) }]);
 
   while (true) {
@@ -20,6 +21,7 @@ export async function runAgent({
 
     if (response.content) {
       await addMessages([response]);
+      console.log(`✨ [BUZZ] Validation completed`);
       return getMessages();
     }
 
@@ -31,6 +33,8 @@ export async function runAgent({
       const toolName = toolCall.function.name;
       const toolArgs = JSON.parse(toolCall.function.arguments);
 
+      console.log(`🔧 [BUZZ] Executing tool: ${toolName}`);
+
       if (toolImplementations[toolName]) {
         const result = await toolImplementations[toolName]({
           message: JSON.stringify(message),
@@ -39,7 +43,7 @@ export async function runAgent({
 
         await saveToolResponse(toolCall.id, JSON.stringify({ result }));
       } else {
-        console.error(`Unknown tool: ${toolName}`);
+        console.error(`❌ [BUZZ] Unknown tool: ${toolName}`);
       }
     }
   }

@@ -38,6 +38,84 @@
       "annotations": [],
       "id": "cfc39c2d-504f-475c-9581-ce480c435b41",
       "createdAt": "2025-07-31T15:13:32.002Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"number\":15}",
+      "id": "f538886a-261e-43c5-8d44-14962b10fdde",
+      "createdAt": "2025-07-31T15:22:08.829Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_FfGmohtp60R1fXewz54c8FUE",
+          "type": "function",
+          "function": {
+            "name": "fizzbuzz",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "c085596c-54db-4829-a4a0-8051b3071f18",
+      "createdAt": "2025-07-31T15:22:09.836Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"FizzBuzz\"}",
+      "tool_call_id": "call_FfGmohtp60R1fXewz54c8FUE",
+      "id": "72166cfe-53f0-495e-8bf6-c18cc057eefd",
+      "createdAt": "2025-07-31T15:22:09.839Z"
+    },
+    {
+      "role": "assistant",
+      "content": "FizzBuzz",
+      "refusal": null,
+      "annotations": [],
+      "id": "ff03db66-1462-4359-baa7-ce218ed7a5f3",
+      "createdAt": "2025-07-31T15:22:10.345Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"number\":15}",
+      "id": "79bf9803-d943-4c0f-a7ad-e7b6809aa9da",
+      "createdAt": "2025-07-31T15:29:04.171Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_MSIgV4CEgjXbklpheQWDnbyD",
+          "type": "function",
+          "function": {
+            "name": "fizzbuzz",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "e084d703-8ac2-4183-91c2-36971078838f",
+      "createdAt": "2025-07-31T15:29:05.619Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"FizzBuzz\"}",
+      "tool_call_id": "call_MSIgV4CEgjXbklpheQWDnbyD",
+      "id": "11b3c2ef-78fe-481b-937e-08624a0a8a11",
+      "createdAt": "2025-07-31T15:29:05.621Z"
+    },
+    {
+      "role": "assistant",
+      "content": "FizzBuzz",
+      "refusal": null,
+      "annotations": [],
+      "id": "782301ce-d210-48f2-ba57-350389fee5b1",
+      "createdAt": "2025-07-31T15:29:06.300Z"
     }
   ]
 }
