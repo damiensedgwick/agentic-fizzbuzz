@@ -1,6 +1,8 @@
-# Agentic FizzBuzz (WIP)
+# Agentic FizzBuzz 
 
-A distributed, agent-based FizzBuzz implementation where each microservice operates as an autonomous agent with specialised capabilities.
+A distributed, agent-based FizzBuzz implementation where each microservice operates as an autonomous agent with its own tooling.
+
+[Demo Video](./demo/daf.mp4)
 
 ## Architecture
 
