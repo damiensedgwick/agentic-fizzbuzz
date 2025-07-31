@@ -38,6 +38,45 @@
       "annotations": [],
       "id": "d6e58daa-744e-43eb-bd38-ce3b5d61b84d",
       "createdAt": "2025-07-31T15:01:19.094Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"number\":10}",
+      "id": "ff791779-70f1-4f9b-985a-4e4f23dd3621",
+      "createdAt": "2025-07-31T15:13:11.312Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_L2DBrTv7eqNXnk8kY8Y7ec8p",
+          "type": "function",
+          "function": {
+            "name": "buzz",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "3b10fc86-c56f-4d76-a680-859e56a07d63",
+      "createdAt": "2025-07-31T15:13:12.622Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"Buzz\"}",
+      "tool_call_id": "call_L2DBrTv7eqNXnk8kY8Y7ec8p",
+      "id": "2af83752-c35d-4ed3-a910-ff9485f980e1",
+      "createdAt": "2025-07-31T15:13:12.625Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Buzz",
+      "refusal": null,
+      "annotations": [],
+      "id": "d986ff91-4e55-4b20-80d9-87f938c5cc40",
+      "createdAt": "2025-07-31T15:13:13.471Z"
     }
   ]
 }

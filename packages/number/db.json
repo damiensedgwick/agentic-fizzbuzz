@@ -1,0 +1,43 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "{\"number\":1}",
+      "id": "039ac99d-18dd-4399-9889-dfb11754bc3c",
+      "createdAt": "2025-07-31T15:12:41.629Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_zd9oesI1WMN4aCk3jC5kk7yT",
+          "type": "function",
+          "function": {
+            "name": "number",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "44076351-7e6b-40e6-8e6c-d73a7dd7eeed",
+      "createdAt": "2025-07-31T15:12:42.939Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"1\"}",
+      "tool_call_id": "call_zd9oesI1WMN4aCk3jC5kk7yT",
+      "id": "304855b4-9816-4211-89ae-ca00fed41680",
+      "createdAt": "2025-07-31T15:12:42.942Z"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"result\":\"1\"}",
+      "refusal": null,
+      "annotations": [],
+      "id": "e79ffcd6-ca0f-4a32-885e-b05e948863a2",
+      "createdAt": "2025-07-31T15:12:44.058Z"
+    }
+  ]
+}

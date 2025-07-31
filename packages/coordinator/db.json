@@ -88,6 +88,273 @@
       "annotations": [],
       "id": "72e98ab1-b0b3-46e5-bc0d-a9c94248e2d2",
       "createdAt": "2025-07-31T15:01:20.222Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"task\":\"fizzbuzz\",\"number\":1}",
+      "id": "915b1242-faa5-407f-84e5-765f0f93277d",
+      "createdAt": "2025-07-31T15:12:38.989Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_S7ld3ZfLN5ZA4PCGhfBdzFwz",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "697f1f62-8261-442e-a1e7-da37c9fb1ec9",
+      "createdAt": "2025-07-31T15:12:40.140Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_S7ld3ZfLN5ZA4PCGhfBdzFwz",
+      "id": "03c8d406-05c7-442d-98a6-f528637896a6",
+      "createdAt": "2025-07-31T15:12:40.143Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_iGKKbKfdmohdZXk6Ip3h5kc4",
+          "type": "function",
+          "function": {
+            "name": "range",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "57ae9bb3-ba92-49a3-9c8e-5e4dfd30a3fd",
+      "createdAt": "2025-07-31T15:12:40.797Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_iGKKbKfdmohdZXk6Ip3h5kc4",
+      "id": "e9cf6091-552e-4169-af98-4492f82d9a33",
+      "createdAt": "2025-07-31T15:12:40.800Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_dGtnXMQWqZKhnS070qHaYRkF",
+          "type": "function",
+          "function": {
+            "name": "next",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "2d4d6c13-7c5a-470c-b990-671ed13cf0ff",
+      "createdAt": "2025-07-31T15:12:41.600Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"{\\\"result\\\":\\\"1\\\"}\"}",
+      "tool_call_id": "call_dGtnXMQWqZKhnS070qHaYRkF",
+      "id": "1cc981f4-cdd5-49ce-b382-52967904c703",
+      "createdAt": "2025-07-31T15:12:44.066Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The next agent to execute the task is to return the result \"1.\"",
+      "refusal": null,
+      "annotations": [],
+      "id": "4f8a38d6-1c87-4da8-9d60-35c2f8773750",
+      "createdAt": "2025-07-31T15:12:44.932Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"task\":\"fizzbuzz\",\"number\":10}",
+      "id": "971f3b5b-2763-4fc7-80c1-eaa15474969b",
+      "createdAt": "2025-07-31T15:13:08.437Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_H0K07azRpLWlPQf4w8URFDuU",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "28e4d915-f655-4d12-97c3-57ef3abbc79f",
+      "createdAt": "2025-07-31T15:13:09.173Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_H0K07azRpLWlPQf4w8URFDuU",
+      "id": "5da44293-4b1e-4f8e-98f0-0efb65386db6",
+      "createdAt": "2025-07-31T15:13:09.177Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_ObWIs4f2MY20MUyLopj90k9a",
+          "type": "function",
+          "function": {
+            "name": "range",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "b577c1f8-0fb3-4aa5-ba52-69f73e743f70",
+      "createdAt": "2025-07-31T15:13:10.376Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_ObWIs4f2MY20MUyLopj90k9a",
+      "id": "dc69d1e3-c229-4a99-8c56-cc3af8cdbf28",
+      "createdAt": "2025-07-31T15:13:10.379Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_x7xBAfsG2n6ljaqE32zuGiPq",
+          "type": "function",
+          "function": {
+            "name": "next",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "6a4bd5ee-dfc2-4178-a644-31d67ac2cfda",
+      "createdAt": "2025-07-31T15:13:11.279Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"Buzz\"}",
+      "tool_call_id": "call_x7xBAfsG2n6ljaqE32zuGiPq",
+      "id": "b5734070-bd4f-4e36-825d-1fc849338270",
+      "createdAt": "2025-07-31T15:13:13.479Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The next agent to execute the task is \"Buzz.\"",
+      "refusal": null,
+      "annotations": [],
+      "id": "5538985d-219a-447f-b28b-9ba721d23c62",
+      "createdAt": "2025-07-31T15:13:14.155Z"
+    },
+    {
+      "role": "user",
+      "content": "{\"task\":\"fizzbuzz\",\"number\":15}",
+      "id": "d3392e73-b3bc-4306-8cef-ece58e29afa7",
+      "createdAt": "2025-07-31T15:13:27.338Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_WdVyAasIT9PhdI79jW0HBNVv",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "b27faaa9-7b62-439f-8482-3faf4cd36bb1",
+      "createdAt": "2025-07-31T15:13:28.295Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_WdVyAasIT9PhdI79jW0HBNVv",
+      "id": "733cec71-ae21-44fc-81fa-e420c7db9e40",
+      "createdAt": "2025-07-31T15:13:28.296Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_AP7bkBmPXdMHwoEWxBHJXL53",
+          "type": "function",
+          "function": {
+            "name": "range",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "f33e9601-a61e-4711-9062-375ed0966738",
+      "createdAt": "2025-07-31T15:13:29.217Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_AP7bkBmPXdMHwoEWxBHJXL53",
+      "id": "1f017bd4-35d0-45e7-abee-3cc388ae9b3d",
+      "createdAt": "2025-07-31T15:13:29.219Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_kWzyaZBod5zZiUJ53RvZSmkN",
+          "type": "function",
+          "function": {
+            "name": "next",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "e25bf522-4f3f-401a-a0cd-f31c1f9aad2c",
+      "createdAt": "2025-07-31T15:13:30.277Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"FizzBuzz\"}",
+      "tool_call_id": "call_kWzyaZBod5zZiUJ53RvZSmkN",
+      "id": "47263045-d7b2-457b-8810-9f9bef2e6055",
+      "createdAt": "2025-07-31T15:13:32.011Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The next agent to execute the task is \"FizzBuzz.\"",
+      "refusal": null,
+      "annotations": [],
+      "id": "ad1d6bc1-9ee6-4257-84aa-c1f67e9ee036",
+      "createdAt": "2025-07-31T15:13:32.872Z"
     }
   ]
 }
