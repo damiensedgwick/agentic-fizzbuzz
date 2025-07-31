@@ -1,10 +1,12 @@
 import { z } from "zod";
 import { ToolFn } from "../../types";
+import { sendToAgent } from "../communication";
 
 export const nextToolDefinition = {
   name: "next",
   parameters: z.object({}),
-  description: "Determine the next agent to execute the task",
+  description:
+    "Determine the next agent to execute the task and send the request to that agent",
 };
 
 type Args = z.infer<typeof nextToolDefinition.parameters>;
@@ -12,17 +14,29 @@ type Args = z.infer<typeof nextToolDefinition.parameters>;
 export const nextTool: ToolFn<Args, string> = async ({ message }) => {
   const { number } = JSON.parse(message);
 
+  // Determine which agent should process this number
+  let agentName: string;
+
   if (number % 5 === 0 && number % 3 === 0) {
-    return "fizzbuzz";
+    agentName = "fizzbuzz";
+  } else if (number % 5 === 0) {
+    agentName = "buzz";
+  } else if (number % 3 === 0) {
+    agentName = "fizz";
+  } else {
+    agentName = "number";
   }
 
-  if (number % 5 === 0) {
-    return "buzz";
-  }
+  console.log(`Routing number ${number} to ${agentName} agent`);
 
-  if (number % 3 === 0) {
-    return "fizz";
-  }
+  try {
+    // Send the request to the determined agent
+    const response = await sendToAgent(agentName, number);
 
-  return "number";
+    // Return the result from the agent
+    return response.result || number.toString();
+  } catch (error) {
+    console.error(`Error sending to ${agentName} agent:`, error);
+    throw new Error(`Failed to communicate with ${agentName} agent: ${error}`);
+  }
 };
