@@ -24,6 +24,8 @@ export async function runAgent({
     if (response.content) {
       await addMessages([response]);
       console.log(`✨ [COORDINATOR] Agent processing completed`);
+      
+      // Return the complete conversation history so we can extract the final result
       return getMessages();
     }
 

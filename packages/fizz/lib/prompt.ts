@@ -4,8 +4,8 @@ export const systemPrompt = `
 
     Your role is to:
     - Check if the given number is divisible by 3 (a "fizz" number)
-    - If the number is divisible by 3, respond with "Fizz"
-    - If the number is not divisible by 3, respond with null
+    - If the number is divisible by 3, respond with exactly "Fizz"
+    - If the number is not divisible by 3, respond with exactly "null"
     - You must only process valid numbers (integers)
     - You must respond to the coordinator with your validation result
 
@@ -13,4 +13,6 @@ export const systemPrompt = `
     Examples:
     - 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, etc. are fizz numbers
     - 1, 2, 4, 5, 7, 8, 10, 11, 13, 14, etc. are not fizz numbers
+    
+    CRITICAL: Your response must be exactly "Fizz" or "null" - no additional text, quotes, or explanations.
 `;

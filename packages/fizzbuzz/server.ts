@@ -47,8 +47,14 @@ app.post("/check", async (req, res) => {
 
     console.log(`✅ [FIZZBUZZ] Validation completed. Result: ${result}`);
 
+    // Clean the result to ensure it's exactly what we want
+    let cleanResult = null;
+    if (result === "FizzBuzz") {
+      cleanResult = "FizzBuzz";
+    }
+
     res.json({
-      result: result === "FizzBuzz" ? "FizzBuzz" : null,
+      result: cleanResult,
     });
   } catch (error) {
     console.error("🚨 [FIZZBUZZ] Processing error:", error);
