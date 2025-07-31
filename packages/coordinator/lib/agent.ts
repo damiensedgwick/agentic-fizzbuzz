@@ -1,15 +1,10 @@
 import { runLLM } from "./llm";
 import { addMessages, getMessages, saveToolResponse } from "./memory";
-import { fizzbuzzTaskTool } from "./tools/task";
-import { ToolFn } from "../types";
-
-const toolImplementations: Record<string, ToolFn> = {
-  task: fizzbuzzTaskTool,
-};
+import { toolImplementations } from "./tools";
 
 export async function runAgent({
   message,
-  tools,
+  tools: toolDefinitions,
 }: {
   message: { task: string; number: number };
   tools: any[];
@@ -18,7 +13,10 @@ export async function runAgent({
 
   while (true) {
     const history = await getMessages();
-    const response = await runLLM({ messages: history, tools });
+    const response = await runLLM({
+      messages: history,
+      tools: toolDefinitions,
+    });
 
     if (response.content) {
       await addMessages([response]);

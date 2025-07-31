@@ -3,9 +3,7 @@ import { ToolFn } from "../../types";
 
 export const taskToolDefinition = {
   name: "task",
-  parameters: z.object({
-    message: z.string().describe("The message containing the task information"),
-  }),
+  parameters: z.object({}),
   description: "Check if the given task is a fizzbuzz task",
 };
 

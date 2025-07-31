@@ -26,11 +26,15 @@ app.post("/process", async (req, res) => {
       tools,
     });
 
+    console.info(`
+      ${response[response.length - 1]?.content}
+    `);
+
     res.json({
-      message: `Agent ${
-        response[response.length - 1]?.content || "Unknown"
-      } has been assigned the task`,
+      message: response[response.length - 1]?.content,
     });
+
+    // TODO: Send the message to the next agent
   } catch (error) {
     console.error("🚀 ~ error:", error);
     res.status(500).json({ error: "Internal server error" });
