@@ -28,6 +28,9 @@ This system consists of 5 specialized agents, each handling a specific aspect of
 
 ## Setup
 
+⚠️ Each agent has its own API key from OpenAI - You will need your own account and API keys to be able
+to run this solution locally.
+
 ### Docker (Recommended)
 
 ```bash
