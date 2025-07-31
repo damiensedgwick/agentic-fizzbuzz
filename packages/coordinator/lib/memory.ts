@@ -56,3 +56,9 @@ export const saveToolResponse = async (
     },
   ]);
 };
+
+export const resetDatabase = async () => {
+  const db = await getDb();
+  db.data.messages = [];
+  await db.write();
+};

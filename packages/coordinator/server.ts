@@ -1,6 +1,7 @@
 import express, { response } from "express";
 import { runAgent } from "./lib/agent";
 import { tools } from "./lib/tools";
+import { resetDatabase } from "./lib/memory";
 
 const app = express();
 const port = 8004;
@@ -11,6 +12,19 @@ app.get("/health", (req, res) => {
   res.json({
     message: "Coordinator agent is healthy",
   });
+});
+
+app.post("/reset", async (req, res) => {
+  try {
+    await resetDatabase();
+
+    res.json({
+      message: "Database reset successfully",
+    });
+  } catch (error) {
+    console.error("🚀 ~ reset error:", error);
+    res.status(500).json({ error: "Failed to reset database" });
+  }
 });
 
 app.post("/process", async (req, res) => {
