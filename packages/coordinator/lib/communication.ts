@@ -42,7 +42,6 @@ export async function sendToAgent(
 
     const data = await response.json();
 
-    // Validate the response structure
     if (typeof data.result !== "string" && data.result !== null) {
       throw new Error(
         `Invalid response format from ${agentName} agent: ${JSON.stringify(

@@ -14,7 +14,6 @@ type Args = z.infer<typeof nextToolDefinition.parameters>;
 export const nextTool: ToolFn<Args, string> = async ({ message }) => {
   const { number } = JSON.parse(message);
 
-  // Determine which agent should process this number
   let agentName: string;
 
   if (number % 5 === 0 && number % 3 === 0) {
@@ -32,14 +31,12 @@ export const nextTool: ToolFn<Args, string> = async ({ message }) => {
   );
 
   try {
-    // Send the request to the determined agent
     const response = await sendToAgent(agentName, number);
 
     console.log(
       `📨 [COORDINATOR] Received response from ${agentName} agent: ${response.result}`
     );
 
-    // Return the result from the agent
     return response.result || number.toString();
   } catch (error) {
     console.error(

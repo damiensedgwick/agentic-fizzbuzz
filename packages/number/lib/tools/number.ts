@@ -15,7 +15,6 @@ export const numberValidationTool: ToolFn<Args, string | null> = async ({
 }) => {
   const { number } = JSON.parse(message);
 
-  // Check if number is NOT divisible by 3 AND NOT divisible by 5
   if (number % 3 !== 0 && number % 5 !== 0) {
     return number.toString();
   } else {

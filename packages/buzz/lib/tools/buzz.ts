@@ -14,7 +14,6 @@ export const buzzValidationTool: ToolFn<Args, string | null> = async ({
 }) => {
   const { number } = JSON.parse(message);
 
-  // Check if number is divisible by 5
   if (number % 5 === 0) {
     return "Buzz";
   } else {

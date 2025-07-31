@@ -15,7 +15,6 @@ export const fizzbuzzValidationTool: ToolFn<Args, string | null> = async ({
 }) => {
   const { number } = JSON.parse(message);
 
-  // Check if number is divisible by both 3 and 5
   if (number % 3 === 0 && number % 5 === 0) {
     return "FizzBuzz";
   } else {

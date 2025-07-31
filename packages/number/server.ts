@@ -47,10 +47,8 @@ app.post("/check", async (req, res) => {
 
     console.log(`✅ [NUMBER] Validation completed. Result: ${result}`);
 
-    // Clean the result to ensure it's exactly what we want
     let cleanResult = null;
     if (result && result !== "null") {
-      // If it's a valid result (not null), use it as is
       cleanResult = result;
     }
 

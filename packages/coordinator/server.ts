@@ -37,23 +37,20 @@ app.post("/process", async (req, res) => {
   console.log(`🎯 [COORDINATOR] Received fizzbuzz task for number ${number}`);
 
   try {
-    // Wait for the complete agent processing to finish
     const response = await runAgent({
       message: { task, number },
       tools,
     });
 
-    // Extract the final result from the last message
     const finalMessage = response[response.length - 1];
     const result = finalMessage?.content;
 
     console.log(`✅ [COORDINATOR] Task completed. Result: ${result}`);
 
-    // Return the final result as JSON to the user
     res.json({
       result: result,
       number: number,
-      task: task
+      task: task,
     });
   } catch (error) {
     console.error("🚨 [COORDINATOR] Processing error:", error);
