@@ -1,3 +1,3 @@
-import { fizzbuzzTaskTool } from "./task";
+import { taskToolDefinition } from "./task";
 
-export const tools = [fizzbuzzTaskTool];
+export const tools = [taskToolDefinition];

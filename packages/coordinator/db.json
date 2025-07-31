@@ -1,3 +1,53 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "role": "user",
+      "content": "{\"task\":\"fizzbuzz\",\"number\":15}",
+      "id": "4dcd7293-88f4-4a1f-892b-928c26a2c719",
+      "createdAt": "2025-07-31T12:31:40.695Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_ATjwIH1YpRgl1mTNBToMAKSG",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{\"message\":\"{\\\"task\\\":\\\"fizzbuzz\\\",\\\"number\\\":15}\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "5e37abf5-c327-4eed-8bf0-389a1240f88a",
+      "createdAt": "2025-07-31T12:31:41.847Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_ATjwIH1YpRgl1mTNBToMAKSG",
+      "id": "39648618-8e01-49c7-b81f-5098a6418c15",
+      "createdAt": "2025-07-31T12:31:41.851Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The task is a fizzbuzz task. I will now determine which agent is next in line to execute the task.",
+      "tool_calls": [
+        {
+          "id": "call_UESyOhmTl8iYJPKv1qlZORjQ",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{\"message\":\"{\\\"task\\\":\\\"fizzbuzz\\\",\\\"number\\\":15}\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "27eecad7-1ba5-4936-b0a3-a4e60a8ee44b",
+      "createdAt": "2025-07-31T12:31:43.582Z"
+    }
+  ]
 }
