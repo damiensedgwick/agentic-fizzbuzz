@@ -1,0 +1,43 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "{\"number\":10}",
+      "id": "c401a8eb-1bc3-4487-a1a9-fe849b3d83eb",
+      "createdAt": "2025-07-31T15:01:17.692Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_OclcuAWgt0Vni58cZbFZPJxq",
+          "type": "function",
+          "function": {
+            "name": "buzz",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "196089b3-2ab6-4fdd-bdc8-86bb01102ab3",
+      "createdAt": "2025-07-31T15:01:18.587Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"Buzz\"}",
+      "tool_call_id": "call_OclcuAWgt0Vni58cZbFZPJxq",
+      "id": "18d38de9-24f6-443c-8a27-3d4592c519f9",
+      "createdAt": "2025-07-31T15:01:18.590Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Buzz",
+      "refusal": null,
+      "annotations": [],
+      "id": "d6e58daa-744e-43eb-bd38-ce3b5d61b84d",
+      "createdAt": "2025-07-31T15:01:19.094Z"
+    }
+  ]
+}

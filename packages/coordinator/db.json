@@ -1,3 +1,93 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "role": "user",
+      "content": "{\"task\":\"fizzbuzz\",\"number\":10}",
+      "id": "d654044c-e888-4209-98b5-ee2c0805fba9",
+      "createdAt": "2025-07-31T15:01:14.543Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_PP3dYXDuXNXEwz0FxgvYuYRB",
+          "type": "function",
+          "function": {
+            "name": "task",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "37e115aa-a05f-4204-9cb8-1ce0e3d942b1",
+      "createdAt": "2025-07-31T15:01:15.471Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_PP3dYXDuXNXEwz0FxgvYuYRB",
+      "id": "e86c093f-027f-454a-adf3-bc7e5325efd7",
+      "createdAt": "2025-07-31T15:01:15.473Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_wd0tSnbcMr5NZuHHkXsOK3lg",
+          "type": "function",
+          "function": {
+            "name": "range",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "20269446-7840-40bd-8c11-8e63203d91b0",
+      "createdAt": "2025-07-31T15:01:16.332Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":true}",
+      "tool_call_id": "call_wd0tSnbcMr5NZuHHkXsOK3lg",
+      "id": "70a77b82-7f13-4da8-9e29-6a1affeb75b4",
+      "createdAt": "2025-07-31T15:01:16.336Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_jPj3oJ8GOHDL30D6X32kQOCL",
+          "type": "function",
+          "function": {
+            "name": "next",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "89737a35-a058-4840-bced-e4e344358fb0",
+      "createdAt": "2025-07-31T15:01:17.660Z"
+    },
+    {
+      "role": "tool",
+      "content": "{\"result\":\"Buzz\"}",
+      "tool_call_id": "call_jPj3oJ8GOHDL30D6X32kQOCL",
+      "id": "7d2b73d4-564e-4ee5-a3aa-04f090507bc6",
+      "createdAt": "2025-07-31T15:01:19.100Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The next agent to execute the task is \"Buzz.\"",
+      "refusal": null,
+      "annotations": [],
+      "id": "72e98ab1-b0b3-46e5-bc0d-a9c94248e2d2",
+      "createdAt": "2025-07-31T15:01:20.222Z"
+    }
+  ]
 }
